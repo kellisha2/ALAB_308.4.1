@@ -53,7 +53,7 @@ console.log(arrayOfObjects)
 
 
 
-// Part 4
+// Part 4: Sorting and Manipulating Data
 
 // Remove the last element from the sorted array. Use Pop
 arrayOfObjects.pop();
@@ -71,7 +71,8 @@ let newCustomerInfo = {
 arrayOfObjects.splice(1, 0, newCustomerInfo)
 
 console.log(arrayOfObjects)
-// push
+
+// Add the following object to the end of the array. Use push
 
 let addSecondArray = {
     id: "7",
@@ -84,7 +85,7 @@ arrayOfObjects.push(addSecondArray)
 
 // Finally, use the values of each object within the array and the array’s length property to calculate the average age of the group. This calculation should be accomplished using a loop.
 
-// let customerAges = Number(arrayOfObjects[0].age) + Number(arrayOfObjects[1].age) + Number(arrayOfObjects[2].age)
+// let customerAges = Number(arrayOfObjects[0].age) + Number(arrayOfObjects[1].age) + Number(arrayOfObjects[2].age)  --> manual way
 
 let customerAges = 0;
 for (let index = 0; index < arrayOfObjects.length; index++) {
