@@ -7,19 +7,18 @@ const customerInfo = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Coo
 
 let individualRowArray = [];
 let outerRowsArray = [];
-let word = ""; // delcaring it as  string
+let word = ""; // declaring it a string
 
-for (let index = 0; index < customerInfo.length; index++) {
-    const character = customerInfo[index];
+for (let i = 0; i < customerInfo.length; i++) {
+    const character = customerInfo[i];
 
-    if(character == ",") {
-        console.log(word)
+    if (character == ",") {
         individualRowArray.push(word);
-        word = "";
-    } else if(character == "\n") {
+        word = ""; 
+    } else if (character == "\n") {
         individualRowArray.push(word);
         outerRowsArray.push(individualRowArray);
-        word = "";
+        word = ""; // to prevent the end of the 1st array to start the beginning of the next array
         individualRowArray = [];
     } else {
         word = word + character;
@@ -27,3 +26,34 @@ for (let index = 0; index < customerInfo.length; index++) {
 }
 
 console.log(outerRowsArray)
+
+// Part 3
+
+let arrayOfObjects = [];
+
+let firstRowData = outerRowsArray[0];
+console.log(firstRowData)
+for (let i = 1; i < outerRowsArray.length; i++) {
+    let obj  = {};
+    let outerRow = outerRowsArray[i]
+    
+    for (let index = 0; index < firstRowData.length; index++) {
+        const headerKeyFromFirstRowData = firstRowData[index];
+        obj[headerKeyFromFirstRowData.toLowerCase()] = outerRow[index];
+    }
+    arrayOfObjects.push(obj);
+
+}
+
+console.log(arrayOfObjects)
+
+
+// Part 4
+
+// Remove the last element from the sorted array.
+// use Pop
+
+
+// splice
+
+// push
